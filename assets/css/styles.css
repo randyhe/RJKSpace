@@ -1,0 +1,202 @@
+:root {
+  --bg: #f8f6f2;
+  --panel: #fffdf9;
+  --text: #171717;
+  --muted: #5d5d5d;
+  --accent: #b5522e;
+  --accent-hover: #963f21;
+  --line: #ded8cf;
+  --radius: 14px;
+  --shadow: 0 12px 32px rgba(23, 23, 23, 0.08);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Avenir Next", "Franklin Gothic Medium", "Helvetica Neue", sans-serif;
+  background:
+    radial-gradient(circle at top right, #fde8d7 0%, transparent 38%),
+    linear-gradient(180deg, var(--bg), #f3efe9);
+  color: var(--text);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+.site-header {
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 1.25rem 1.25rem 0;
+}
+
+.brand {
+  display: inline-block;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.layout {
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 1.25rem;
+}
+
+.hero,
+.brief,
+.contact {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.75rem;
+}
+
+.brief,
+.contact {
+  margin-top: 1rem;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  margin-top: 0;
+}
+
+h1,
+h2 {
+  line-height: 1.2;
+  margin: 0 0 0.8rem;
+}
+
+h1 {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  max-width: 18ch;
+}
+
+h2 {
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+}
+
+.lead {
+  max-width: 52ch;
+  color: var(--muted);
+}
+
+.cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.2rem;
+}
+
+.button {
+  border-radius: 999px;
+  padding: 0.68rem 1rem;
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.button-primary {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.button-primary:hover {
+  background: var(--accent-hover);
+}
+
+.button-ghost {
+  color: var(--text);
+  border-color: var(--line);
+  background: #ffffff;
+}
+
+.button-ghost:hover {
+  border-color: var(--accent);
+}
+
+.contact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.contact-list li {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.6rem;
+}
+
+.contact-list span {
+  min-width: 70px;
+  color: var(--muted);
+}
+
+a {
+  color: var(--accent);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid #0f62fe;
+  outline-offset: 3px;
+}
+
+.site-footer {
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 0.5rem 1.25rem 1.5rem;
+  color: var(--muted);
+}
+
+.fade-in {
+  animation: fadeUp 420ms ease both;
+}
+
+.brief.fade-in {
+  animation-delay: 70ms;
+}
+
+.contact.fade-in {
+  animation-delay: 120ms;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 767px) {
+  .hero,
+  .brief,
+  .contact {
+    padding: 1.25rem;
+  }
+
+  .contact-list li {
+    flex-direction: column;
+    gap: 0.2rem;
+    margin-top: 0.9rem;
+  }
+}
