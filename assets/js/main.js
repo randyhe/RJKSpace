@@ -2,8 +2,8 @@ const SITE_CONFIG = {
   email: "hello@rjkspace.com",
   domainLabel: "RJKSpace.com",
   domainUrl: "https://rjkspace.com",
-  githubLabel: "github.com/your-username/RJKSpace",
-  githubUrl: "https://github.com/your-username/RJKSpace",
+  githubLabel: "github.com/randyhe/RJKSpace",
+  githubUrl: "https://github.com/randyhe/RJKSpace",
 };
 
 function initHomepage() {

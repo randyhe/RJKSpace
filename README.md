@@ -45,7 +45,7 @@ Edit `SITE_CONFIG` in `assets/js/main.js`:
 After you log in to your own GitHub account and create a repo (suggested name: `RJKSpace`):
 
 ```bash
-git remote add origin https://github.com/<your-username>/RJKSpace.git
+git remote add origin https://github.com/randyhe/RJKSpace.git
 git branch -M main
 git push -u origin main
 ```
