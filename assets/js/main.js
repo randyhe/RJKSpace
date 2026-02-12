@@ -39,7 +39,7 @@ function initHomepage() {
   if (contactGithub) {
     contactGithub.textContent = SITE_CONFIG.githubLabel;
     contactGithub.href = SITE_CONFIG.githubUrl;
-    contactGithub.setAttribute("aria-label", "Open GitHub repository placeholder");
+    contactGithub.setAttribute("aria-label", "Open RJKSpace GitHub repository");
   }
 
   if (yearNode) {

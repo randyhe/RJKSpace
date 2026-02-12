@@ -1,13 +1,14 @@
 :root {
-  --bg: #f8f6f2;
-  --panel: #fffdf9;
-  --text: #171717;
-  --muted: #5d5d5d;
-  --accent: #b5522e;
-  --accent-hover: #963f21;
-  --line: #ded8cf;
-  --radius: 14px;
-  --shadow: 0 12px 32px rgba(23, 23, 23, 0.08);
+  --bg: #0b1020;
+  --panel: rgba(15, 24, 48, 0.74);
+  --line: rgba(113, 161, 255, 0.24);
+  --text: #eff6ff;
+  --muted: #adc4ea;
+  --accent: #47f3b1;
+  --accent-deep: #20ce8f;
+  --glow: rgba(71, 243, 177, 0.24);
+  --radius: 18px;
+  --shadow: 0 20px 60px rgba(2, 8, 23, 0.5);
 }
 
 *,
@@ -23,111 +24,174 @@ body {
 }
 
 body {
-  font-family: "Avenir Next", "Franklin Gothic Medium", "Helvetica Neue", sans-serif;
-  background:
-    radial-gradient(circle at top right, #fde8d7 0%, transparent 38%),
-    linear-gradient(180deg, var(--bg), #f3efe9);
+  font-family: "Space Grotesk", "Segoe UI", sans-serif;
   color: var(--text);
   min-height: 100vh;
   line-height: 1.6;
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(1200px 640px at 8% -10%, rgba(56, 189, 248, 0.26), transparent 52%),
+    radial-gradient(900px 500px at 100% 0%, rgba(71, 243, 177, 0.16), transparent 46%),
+    linear-gradient(rgba(85, 112, 189, 0.13) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(85, 112, 189, 0.13) 1px, transparent 1px);
+  background-size: auto, auto, 38px 38px, 38px 38px;
+}
+
+.site-header,
+.layout,
+.site-footer {
+  max-width: 920px;
+  margin: 0 auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
 }
 
 .site-header {
-  max-width: 840px;
-  margin: 0 auto;
-  padding: 1.25rem 1.25rem 0;
+  padding-top: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
 }
 
 .brand {
-  display: inline-block;
-  font-weight: 700;
-  letter-spacing: 0.03em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   text-decoration: none;
   color: var(--text);
+  font-weight: 700;
+}
+
+.brand-mark {
+  font-family: "JetBrains Mono", monospace;
+  color: var(--accent);
+}
+
+.status-pill {
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.3rem 0.7rem;
+  background: rgba(11, 16, 32, 0.55);
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-family: "JetBrains Mono", monospace;
 }
 
 .layout {
-  max-width: 840px;
-  margin: 0 auto;
-  padding: 1.25rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  display: grid;
+  gap: 1rem;
 }
 
 .hero,
 .brief,
 .contact {
-  background: var(--panel);
-  border: 1px solid var(--line);
   border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: var(--panel);
+  backdrop-filter: blur(5px);
   box-shadow: var(--shadow);
-  padding: 1.75rem;
+  padding: clamp(1.2rem, 2.2vw, 2rem);
+  animation: fadeUp 500ms ease both;
 }
 
-.brief,
+.brief {
+  animation-delay: 100ms;
+}
+
 .contact {
-  margin-top: 1rem;
+  animation-delay: 180ms;
 }
 
 .eyebrow {
+  margin: 0 0 0.6rem;
+  color: #80a8e8;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  font-size: 0.78rem;
-  letter-spacing: 0.12em;
-  color: var(--muted);
-  margin-top: 0;
+  font-size: 0.74rem;
+  font-family: "JetBrains Mono", monospace;
 }
 
 h1,
 h2 {
-  line-height: 1.2;
-  margin: 0 0 0.8rem;
+  margin: 0 0 0.75rem;
+  line-height: 1.15;
 }
 
 h1 {
-  font-size: clamp(1.8rem, 4vw, 3rem);
-  max-width: 18ch;
+  font-size: clamp(2rem, 5vw, 3.7rem);
+  max-width: 14ch;
 }
 
 h2 {
-  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
 }
 
-.lead {
-  max-width: 52ch;
+.lead,
+.brief p {
   color: var(--muted);
+  max-width: 58ch;
+}
+
+.signal-list {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.signal-list li {
+  border: 1px solid rgba(71, 243, 177, 0.35);
+  background: rgba(8, 15, 32, 0.8);
+  color: #c6ffe8;
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.84rem;
 }
 
 .cta-group {
+  margin-top: 1.3rem;
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-  margin-top: 1.2rem;
 }
 
 .button {
   border-radius: 999px;
-  padding: 0.68rem 1rem;
+  padding: 0.67rem 1rem;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
   border: 1px solid transparent;
-  transition: all 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
 }
 
 .button-primary {
-  background: var(--accent);
-  color: #ffffff;
+  background: linear-gradient(135deg, var(--accent), #8bffcd);
+  color: #032a1b;
+  box-shadow: 0 0 0 1px rgba(71, 243, 177, 0.4), 0 10px 24px var(--glow);
 }
 
 .button-primary:hover {
-  background: var(--accent-hover);
+  background: linear-gradient(135deg, var(--accent-deep), #68e8b4);
 }
 
 .button-ghost {
-  color: var(--text);
+  background: rgba(11, 16, 32, 0.6);
   border-color: var(--line);
-  background: #ffffff;
+  color: var(--text);
 }
 
 .button-ghost:hover {
-  border-color: var(--accent);
+  border-color: rgba(71, 243, 177, 0.42);
 }
 
 .contact-list {
@@ -137,49 +201,38 @@ h2 {
 }
 
 .contact-list li {
+  margin-top: 0.65rem;
   display: flex;
-  gap: 0.5rem;
-  margin-top: 0.6rem;
+  gap: 0.65rem;
 }
 
 .contact-list span {
-  min-width: 70px;
-  color: var(--muted);
+  min-width: 72px;
+  color: #8db0df;
 }
 
 a {
-  color: var(--accent);
+  color: #9ef7d2;
 }
 
 a:focus-visible,
 button:focus-visible {
-  outline: 3px solid #0f62fe;
+  outline: 3px solid #9ef7d2;
   outline-offset: 3px;
 }
 
 .site-footer {
-  max-width: 840px;
-  margin: 0 auto;
-  padding: 0.5rem 1.25rem 1.5rem;
-  color: var(--muted);
-}
-
-.fade-in {
-  animation: fadeUp 420ms ease both;
-}
-
-.brief.fade-in {
-  animation-delay: 70ms;
-}
-
-.contact.fade-in {
-  animation-delay: 120ms;
+  padding-top: 0.2rem;
+  padding-bottom: 1.6rem;
+  color: #96b2dc;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.88rem;
 }
 
 @keyframes fadeUp {
   from {
     opacity: 0;
-    transform: translateY(6px);
+    transform: translateY(8px);
   }
   to {
     opacity: 1;
@@ -188,15 +241,13 @@ button:focus-visible {
 }
 
 @media (max-width: 767px) {
-  .hero,
-  .brief,
-  .contact {
-    padding: 1.25rem;
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .contact-list li {
     flex-direction: column;
-    gap: 0.2rem;
-    margin-top: 0.9rem;
+    gap: 0.15rem;
   }
 }
