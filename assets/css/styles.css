@@ -82,8 +82,16 @@ body {
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.25rem;
+  grid-template-columns: repeat(2, minmax(320px, 1fr));
+  gap: 1.5rem;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+@media (max-width: 767px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .project-card {
