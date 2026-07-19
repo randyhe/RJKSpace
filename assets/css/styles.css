@@ -182,3 +182,13 @@ a:focus-visible {
     transform: translateY(0);
   }
 }
+
+.center-one-card {
+  display: flex;
+  justify-content: center;
+}
+
+.center-one-card .project-card {
+  width: 100%;
+  max-width: 420px;
+}
